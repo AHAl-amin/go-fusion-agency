@@ -19,7 +19,7 @@ export const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/TaQee.Osmani.10"
                 className="text-gray-200 hover:text-white transition-colors"
               >
                 <FaFacebook size={20} />
@@ -31,7 +31,7 @@ export const Footer = () => {
                 <FaTwitter size={20} />
               </a>
               <a
-                href="https://www.linkedin.com/in/toki-usmani123/"
+                href="https://www.linkedin.com/in/toki-osmani-60180232a/"
                 className="text-gray-200 hover:text-white transition-colors"
               >
                 <FaLinkedin size={20} />

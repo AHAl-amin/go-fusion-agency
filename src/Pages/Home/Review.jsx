@@ -1,6 +1,6 @@
 
 
-import { useState, useEffect, useRef } from "react"; // Import useEffect and useRef
+import { useState, useEffect, useRef } from "react"; 
 import client1 from "../../../public/images/review/client1.png";
 import client2 from "../../../public/images/review/client2.png";
 import client3 from "../../../public/images/review/client3.png";
@@ -17,8 +17,8 @@ const testimonials = [
     username: "@dina_c_woods",
     body: "What I love most? He makes every project feel effortless. After several collaborations, he’s become someone I fully trust to just get it right without handholding.",
     img: client1,
-    image: client1, // Mapped to 'image' for component usage
-    position: "Client", // Added position
+    image: client1, 
+    position: "Client", 
     quote: "What I love most? He makes every project feel effortless. After several collaborations, he’s become someone I fully trust to just get it right without handholding.", // Mapped to 'quote'
   },
   {

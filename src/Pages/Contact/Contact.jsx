@@ -91,7 +91,7 @@ const Contact = () => {
                 Book an appoinment
               </p>
               <button className="text-purple-600 dark:text-purple-400 text-sm font-medium hover:underline">
-                <Link to={"https://www.linkedin.com/in/toki-usmani123/"}>
+                <Link to={"https://www.linkedin.com/in/toki-osmani-60180232a//"}>
                   LinkedIn
                 </Link>
               </button>

@@ -1,19 +1,35 @@
+
+
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Ripple } from "@/components/magicui/ripple";
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
-import { ArrowRight, Smartphone, Palette, Code } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { MdOutlineStarPurple500 } from "react-icons/md";
 import { SlBadge } from "react-icons/sl";
 import { PiBriefcaseDuotone } from "react-icons/pi";
 import { GoCodeReview } from "react-icons/go";
 import { motion } from "framer-motion";
 import { BorderBeam } from "@/components/magicui/border-beam";
-import { LuBrainCircuit } from "react-icons/lu";
-import { TbFileAnalytics } from "react-icons/tb";
-import { GiWorld } from "react-icons/gi";
 import { ReactTyped } from "react-typed";
 import profilepic from "../../../public/images/profile.png";
+import mike from "../../../public/images/Mike.png";
+import { Link } from "react-router-dom"; // ✅ corrected import
+
+// Fade-up motion variant
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  }),
+};
 
 export default function Banner() {
   const profile_info = [
@@ -24,7 +40,7 @@ export default function Banner() {
   ];
 
   return (
-    <section className="relative bg-[#160306] dark:bg-black overflow-hidden ">
+    <section className="relative bg-[#160306] dark:bg-black overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-72 h-72 bg-gray-200/10 rounded-full blur-3xl animate-pulse"></div>
@@ -39,13 +55,41 @@ export default function Banner() {
       <div className="relative z-10 container mx-auto md:px-4 pt-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
-          <div className="space-y-5">
-            <div className="px-3 md:px-0">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-white dark:text-white">
-                <span>Professional</span>
+          <motion.div
+            className="space-y-1"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            {/* Tagline */}
+            <motion.div variants={fadeUp} custom={0} className="px-3 md:px-0">
+              <p className="text-2xl capitalize font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-200 via-orange-300 to-[#195022cb]">
+                BEST DEVELOPMENT AGENCY
+              </p>
+            </motion.div>
+
+            {/* Main Heading */}
+            <motion.div variants={fadeUp} custom={1} className="px-3 md:px-0">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-white mt-10">
+                <div className="flex items-center gap-20">
+                  <span>Go</span>
+                  <img src={mike} alt="Go Fusion Logo" className="md:w-36 w-20" />
+                </div>
+                <span>Fusion Agency.</span>
+              </h1>
+            </motion.div>
+
+            {/* Typed Text Section */}
+            <motion.div variants={fadeUp} custom={2} className="px-3 md:px-0">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold md:leading-20 leading-12 text-white">
+                <span>Our Services...</span>
                 <br />
                 <ReactTyped
-                  strings={["AI Developer", "App Developer", "Web Developer"]}
+                  strings={[
+                    "AI Development",
+                    "App Development",
+                    "Web Development",
+                  ]}
                   typeSpeed={95}
                   backSpeed={50}
                   loop
@@ -54,15 +98,30 @@ export default function Banner() {
                 <br />
                 <span>on Fiverr</span>
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white dark:text-gray-300 leading-relaxed max-w-2xl mt-3">
-                We do <strong>Web Development</strong> and build{" "}
-                <strong>Neural Networks</strong> — empowering your ideas with
-                cutting-edge apps and stunning UI. Satisfaction guaranteed.
+            </motion.div>
+
+            {/* Description */}
+            <motion.div variants={fadeUp} custom={3} className="px-3 md:px-0">
+              <p className="text-base sm:text-sm md:text-[16px] text-white dark:text-gray-300 leading-relaxed max-w-2xl mt-3">
+                We design and develop{" "}
+                <strong>high-performance web and mobile applications</strong>,
+                combining creativity with intelligent technology. From building{" "}
+                <strong>modern user interfaces</strong> to crafting{" "}
+                <strong>AI-driven solutions</strong>, I turn your ideas into
+                digital experiences that deliver real results.
+                <br className="hidden sm:block" />
+                <span className="text-orange-200 font-medium">
+                  Quality • Innovation • Reliability
+                </span>
               </p>
-            </div>
+            </motion.div>
 
             {/* Profile Info */}
-            <div className="grid grid-cols-2 px-3 md:px-0 sm:grid-cols-4 gap-3">
+            <motion.div
+              variants={fadeUp}
+              custom={4}
+              className="grid grid-cols-2 px-3 md:px-0 sm:grid-cols-4 gap-3"
+            >
               {profile_info.map((info) => {
                 const Icon = info.icon;
                 return (
@@ -80,95 +139,87 @@ export default function Banner() {
                   </div>
                 );
               })}
-            </div>
-
-            {/* Skills */}
-            <div className="flex flex-wrap gap-2 px-3 md:px-0 pt-3">
-              {[
-                { icon: Smartphone, text: "Mobile App Development" },
-                { icon: Palette, text: "Mobile App Design" },
-                { icon: Code, text: "Flutter App Developer" },
-                { icon: GiWorld, text: "Web Development" },
-                { icon: TbFileAnalytics, text: "AI-Powered Analytics" },
-                { icon: LuBrainCircuit, text: "Custom AI Development" },
-              ].map(({ icon: Icon, text }, i) => (
-                <Badge
-                  key={i}
-                  variant="outline"
-                  className="bg-white dark:bg-black border-orange-300 dark:border-gray-700 text-[#010231] dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-900 transition-colors"
-                >
-                  <Icon className="w-4 h-4 mr-2" />
-                  {text}
-                </Badge>
-              ))}
-            </div>
+            </motion.div>
 
             {/* CTA Button */}
-            <div className="inline-block mt-6 px-3 md:px-0">
+            <motion.div
+              variants={fadeUp}
+              custom={5}
+              className="inline-block mt-6 px-3 md:px-0"
+            >
               <Button
                 size="lg"
-                className="relative overflow-hidden bg-gradient-to-r from-orange-200 to-orange-300  dark:bg-white text-[#010231] dark:text-black py-4 sm:py-5 text-[16px] font-semibold rounded-md shadow-lg hover:shadow-gray-500/50 transition-all duration-500 group"
+                className="relative overflow-hidden bg-gradient-to-r from-orange-200 to-orange-300 dark:bg-white text-[#010231] dark:text-black py-4 sm:py-5 text-[16px] font-semibold rounded-md shadow-lg hover:shadow-gray-500/50 transition-all duration-500 group"
               >
-                <a
-                  href="https://www.fiverr.com/go_fusion"
-                  target="_blank"
+                <Link
+                  to="/contact"
                   className="relative z-10 flex items-center"
                 >
-                  View Profile
+                  Contact
                   <ArrowRight className="w-5 h-5 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
-                </a>
+                </Link>
                 <span className="absolute inset-0 bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white opacity-0 group-hover:opacity-30 transition-opacity duration-500"></span>
                 <span className="absolute inset-0 bg-white/10 dark:bg-black/10 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
                 <BorderBeam duration={8} size={250} />
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* Right Column */}
+          {/* Right Column (Bouncing Image + Card) */}
           <div className="relative group mb-10">
-            <div className="overflow-hidden rounded-2xl relative">
-              <img
-                src={profilepic}
-                alt="Gazi Alauddin - Tech Entrepreneur & CEO"
-                className="relative mb-20 z-10 object-contain md:w-5/7 h-auto mx-auto"
-              />
-              <Ripple />
+            <div className="flex items-center justify-center">
+              <div className="relative flex flex-col items-center justify-center min-h-[600px] md:min-h-[700px]">
+                {/* Bouncing Image */}
+                <motion.div
+                  animate={{ y: [0, -20, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="z-10"
+                >
+              
+                   <img
+                    src={profilepic}
+                    alt="Md Toki Osmani - Tech Entrepreneur & CEO"
+                    className="md:w-2/3  w-full mx-auto object-cover"
+                  />
+             
+                </motion.div>
 
-              <div className="absolute bottom-0 mt-4 left-0 right-0 p-4 text-center z-50">
-                <div className="w-full max-w-[500px] mx-auto bg-gradient-to-r from-orange-200 to-orange-400  dark:from-gray-300 dark:to-white p-4 rounded-lg backdrop-blur-sm shadow-lg">
-                  <div className="flex flex-col items-center justify-center gap-1 w-full">
-                    <h3 className="text-xl sm:text-2xl font-bold text-[#010231] dark:text-black drop-shadow-md">
+                {/* Info Card */}
+                <div className="mt-[-20px] w-full max-w-[500px] px-4 z-30 ">
+                  <div className="p-4 rounded-full bg-transparent backdrop-blur-sm shadow-lg flex flex-col items-center gap-2 border-2 border-[#3a191c]">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-200 dark:text-black drop-shadow-md">
                       Md Toki Osmani
-
                     </h3>
+
                     <div className="flex items-center justify-center gap-2">
-                      <p className="text-[#010231] dark:text-black/90 text-sm font-medium">
+                      <p className="text-gray-200 dark:text-black/90 text-sm font-medium">
                         Founder
                       </p>
-                      <div className="w-1 h-1 bg-[#010231] dark:bg-black rounded-full"></div>
-                      <p className="text-[#010231] dark:text-black/90 text-sm font-medium">
+                      <div className="w-1 h-1 bg-gray-200 dark:bg-black rounded-full"></div>
+                      <p className="text-gray-200 dark:text-black/90 text-sm font-medium">
                         GO FUSION
                       </p>
                     </div>
-                    <div className="mt-1 flex items-center justify-center gap-1">
-                      <div className="w-2 h-2 bg-[#160306] rounded-full animate-pulse"></div>
-                      <span className="text-xs text-[#010231] dark:text-black/80">
+
+                    <div className="flex items-center justify-center gap-1">
+                      <div className="w-2 h-2 text-gray-200 rounded-full animate-pulse"></div>
+                      <span className="text-xs text-gray-200 dark:text-black/80">
                         Fiverr Verified Pro Seller
                       </span>
                     </div>
+
+                    <BorderBeam duration={8} size={100} />
                   </div>
-                  <BorderBeam duration={8} size={100} />
                 </div>
               </div>
             </div>
           </div>
-
-  
         </div>
       </div>
-
-      {/* Fade Bottom */}
-      {/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent dark:from-black"></div> */}
     </section>
   );
 }

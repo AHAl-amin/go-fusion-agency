@@ -85,7 +85,7 @@ const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center md:p-2 rounded-md text-gray-600 hover:text-cyan-500 focus:outline-none"
+              className="inline-flex items-center justify-center md:p-2 rounded-md text-[#9b3c44] hover:text-[#3a191c] focus:outline-none"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -109,8 +109,8 @@ const Navbar = () => {
                   className={cn(
                     "relative block px-3 py-2 rounded-md text-[18px] font-medium transition-colors",
                     active
-                      ? "text-cyan-600 font-semibold after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-full after:h-[2px] after:bg-cyan-600 after:rounded-full after:transition-all after:duration-500 after:scale-x-100"
-                      : "text-gray-600 hover:text-cyan-500 dark:text-gray-300 dark:hover:text-cyan-400 after:scale-x-0"
+                      ? "text-gray-200 font-semibold after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-full after:h-[2px]  after:rounded-full after:transition-all after:duration-500 after:scale-x-100 border-b border-[#3a191c]"
+                      : "text-gray-600  dark:text-gray-300  b after:scale-x-0"
                   )}
                 >
                   {item.label}
@@ -120,7 +120,7 @@ const Navbar = () => {
 
             <Button
               size="lg"
-              className="relative overflow-hidden w-full bg-black dark:bg-white text-white dark:text-black py-5 text-[16px] font-semibold rounded-md shadow-lg hover:shadow-gray-500/80 transition-all duration-500 group"
+              className="relative overflow-hidden w-full bg-[#3a191c] hover:bg-[#3a191c] dark:bg-white text-white dark:text-black py-5 text-[16px] font-semibold rounded-md shadow-lg  transition-all duration-500 group"
             >
               <span className="relative z-10 flex items-center justify-center">
                 View Profile
