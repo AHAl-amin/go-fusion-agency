@@ -10,59 +10,60 @@ import client5 from "../../../public/images/review/client5.png";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 
+
 const testimonials = [
   {
-    id: 1, // Added ID
-    name: "dina_c_woods",
-    username: "@dina_c_woods",
-    body: "What I love most? He makes every project feel effortless. After several collaborations, he’s become someone I fully trust to just get it right without handholding.",
-    img: client1,
-    image: client1, 
-    position: "Client", 
-    quote: "What I love most? He makes every project feel effortless. After several collaborations, he’s become someone I fully trust to just get it right without handholding.", // Mapped to 'quote'
+    id: 1,
+    name: "Ariahkay",
+    username: "@Ariahkay",
+    body: " I love the patience that I was provided with during my time working with those individuals.",
+    img: client1, // Use imported image
+    image: client1, // Use imported image
+    position: "Client",
+    quote: "I love the patience that I was provided with during my time working with those individuals.",
   },
   {
     id: 2,
-    name: "jayfettig693",
-    username: "@jayfettig693",
+    name: "brighteto11",
+    username: "@brighteto11",
     body: "I've dealt with developers for years and was admittedly reluctant to deal with someone in the other side of the world, on different time zones, etc. I am so glad that I chose them and can't recommend them high enough. Fantastic.",
     img: client2,
     image: client2,
     position: "Client",
-    quote: "I've dealt with developers for years and was admittedly reluctant to deal with someone in the other side of the world, on different time zones, etc. I am so glad that I chose them and can't recommend them high enough. Fantastic.",
+    quote: "Toki and his team are very professional and punctual. They go above and beyond on making sure they align with your vision and scope of work. Phase one of the project was exception. I’m looking forward to continuing working on this project with them and get to delivery! I would highly recommend their services.",
   },
   {
     id: 3,
-    name: "kyprianou",
-    username: "@kyprianou",
+    name: "hegoode",
+    username: "@hegoode",
     body: "Each project benefits from his unique blend of creativity and technical skill, resulting in sites that not only look fantastic but also perform flawlessly. His commitment and attention to detail always ensure the final product goes beyond what I imagined.",
     img: client3,
     image: client3,
     position: "Client",
-    quote: "Each project benefits from his unique blend of creativity and technical skill, resulting in sites that not only look fantastic but also perform flawlessly. His commitment and attention to detail always ensure the final product goes beyond what I imagined.",
+    quote: " Toki’s team is very responsive. I work in Eastern timezone and found them easy to reach to answer my questions I had, at times that were convenient to my schedule, including weekends. We extended my original timeline to ensure that everything I wanted was done the way I wanted it. They were understanding and cooperative with the changes and shifting timelines.",
   },
   {
     id: 4,
-    name: "Hossian0",
-    username: "@Hossian0",
+    name: "maxcam91043",
+    username: "@maxcam91043",
     body: "This is not our first project together, and there’s a reason I came back Mohin and his team deliver. Every milestone is handled with care, creativity, and precision. We’re almost at the finish line, and I already know the outcome will be something to be proud of.",
     img: client4,
     image: client4,
     position: "Client",
-    quote: "This is not our first project together, and there’s a reason I came back Mohin and his team deliver. Every milestone is handled with care, creativity, and precision. We’re almost at the finish line, and I already know the outcome will be something to be proud of.",
+    quote: " MD Toki and his team were exceptional to work with. They delivered my website project efficiently and even ahead of schedule. Their attention to details and willingness to go above and beyond made the whole process seamless. If you need a website done, look no further. Highly recommended. – Max",
   },
   {
     id: 5,
-    name: "Ali_mounji",
-    username: "@Ali_mounji",
+    name: "sabero1",
+    username: "@sabero1",
     body: "Very satisfied with how professional and fast Mihads team is! Did a great piece of work in relatively short time.",
     img: client5,
     image: client5,
     position: "Client",
-    quote: "Very satisfied with how professional and fast Mihads team is! Did a great piece of work in relatively short time.",
+    quote: " It is really awesome to work with you guys. I’m really Happy with the 10 pages Website. My next work will go to you. Really really good.",
   },
-
 ];
+
 
 const Review = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -125,7 +126,7 @@ const Review = () => {
   return (
     <div className="py-16 px-4 bg-[#160306] dark:bg-black">
       <div className="max-w-[165vh] mx-auto">
-        <div className="relative z-10 w-full text-center mb-12">
+        <div className="relative z-10 w-full text-center mb-4 ">
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r  from-orange-200 via-orange-300 to-[#195022cb] text-transparent bg-clip-text dark:text-white mb-2">
             What Our Clients Say
           </h2>         <p className="text-white dark:text-gray-400 text-lg">
@@ -133,8 +134,8 @@ const Review = () => {
           </p>
         </div>
 
-        <div className="relative">
-          <div className="relative h-[500px] flex items-center justify-center overflow-hidden perspective-1000">
+        <div className="relative ">
+          <div className="relative h-[580px] flex items-center justify-center overflow-hidden perspective-1000">
             <div className="absolute w-full flex justify-center items-center">
               {testimonials.map((testimonial, index) => {
                 const position = getCardPosition(index);
@@ -231,7 +232,7 @@ const Review = () => {
 
                       <p
                         className={`mb-4 font-bold transition-all duration-300 ${position === "center"
-                          ? "text-base text-gray-600 dark:text-gray-200" // Adjusted for contrast in dark mode
+                          ? "text-sm text-gray-600 dark:text-gray-200" // Adjusted for contrast in dark mode
                           : position === "adjacent"
                             ? "text-sm text-gray-600 dark:text-gray-300"
                             : "text-xs text-gray-600 dark:text-gray-300"
