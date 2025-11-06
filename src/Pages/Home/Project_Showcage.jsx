@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import car1 from "../../../public/images/project-img/car1.jpg";
+import car1 from "../../../public/images/project-img/arisha.png";
 import genesis1 from "../../../public/images/project-img/genesis1.png";
-import nevafold1 from "../../../public/images/project-img/nevafold1.png"; 
-import sport1 from "../../../public/images/project-img/sport1.png"; 
+import nevafold1 from "../../../public/images/project-img/nevafold1.png";
+import sport1 from "../../../public/images/project-img/sport1.png";
 import {
   Dialog,
   DialogContent,
@@ -25,12 +25,13 @@ import {
 
 const projects = [
   {
+
     id: 1,
     title: "Ariah's World",
     description:
-      "A platform for bowling enthusiasts: track performance, get expert coaching, exclusive content, and join a vibrant community.",
+      "Ariah’s World – Embrace Beauty, Healing, and Self-Love A Spiritual Journey Toward Inner Power and Transformation",
     longDescription:
-      "Bowlers Network is a platform for bowling enthusiasts, offering advanced performance tracking, expert coaching, exclusive content, and a vibrant community. It provides tools to improve your game, connect with fellow bowlers, and track progress, making it the perfect space for players of all levels to elevate their skills.",
+      "Ariah’s World is a holistic beauty and wellness sanctuary that celebrates the divine feminine through ritual-infused products and intentional self-care. Every creation is designed to nurture healing energy, elevate confidence, and help women reconnect with their inner power. Discover a world where beauty becomes a spiritual journey of love, light, and transformation",
     image: car1,
     category: "Web Development",
     technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
@@ -45,9 +46,9 @@ const projects = [
     id: 2,
     title: "Genesis",
     description:
-      "A fun soundboard app with hilarious, toilet-themed sound effects for pranks and laughs.",
+      "Powering the Future of AI Creation Where Innovation Meets Intelligent Design",
     longDescription:
-      "Poop Alert is a lighthearted soundboard app packed with a variety of hilarious, toilet-themed sound effects. From flushing toilets to fart noises, it's designed to add a touch of humor to any situation. Whether you're pulling a prank, lightening the mood, or just looking for a good laugh, 'Poop Alert' has the perfect sound to keep things fun. Easy to use and perfect for any occasion!",
+      "Genesis is a next-generation AI platform built to transform the way creators, developers, and businesses harness artificial intelligence. From generative art and digital media to smart automation, it redefines what’s possible through cutting-edge machine learning. Experience a seamless fusion of creativity and technology that drives ideas into reality.",
     image: genesis1,
     category: "Data Science",
     technologies: ["Python", "React", "TensorFlow", "PostgreSQL", "D3.js"],
@@ -62,11 +63,11 @@ const projects = [
     id: 3,
     title: "NevaFold",
     description:
-      "A mobile app to help users manage and track their health information.",
+      "NEVAFOLD brings bold, vibrant street-and-active wear crafted in Australia for worldwide style seekers. Colourful, premium materials meet confident design to elevate your everyday and workout wardrobe.",
     longDescription:
-      " MED WORLD' APPEARS TO BE TO HELP USERS MANAGE AND TRACK THEIR HEALTH INFORMATION.",
+      " NEVAFOLD is an energetic Australian-based fashion label dedicated to delivering high-quality active and street apparel that lifts your style and vibe. With vibrant colours, advanced fabric technology and ergonomic cuts, each piece is designed for both comfort and bold expression. Whether you’re training, chilling or stepping into the city, NEVAFOLD combines trend-forward aesthetics with performance features and ships worldwide. ",
     image: nevafold1,
-    category: "Mobile Development",
+    category: "Web Development",
     technologies: ["React Native", "Firebase", "Redux", "Node.js"],
     liveUrl: "https://nevafold.com.au/",
     featured: false,
@@ -78,10 +79,10 @@ const projects = [
     id: 4,
     title: "Ek Agency",
     description:
-      "AI-powered math education platform with a smart tutoring chatbot and instant feedback.",
+      "A full-service digital agency dedicated to shaping your brand’s future through strategic design, cutting-edge technology and results-driven creativity.",
     longDescription:
-      "At Math Detectives, we're revolutionising math education with our AI-powered tutoring chatbot built on OpenAI's advanced O1 model. Our smart tutor delivers personalised, one-on-one support tailored to each student's learning style and pace. Students can tackle tough problems with step-by-step guidance, upload their work for instant feedback and error correction, and master complex concepts with access to a rich library of practice worksheets. Plus, our bonus feature allows students to upload handwritten math assignments for detailed solutions or clear explanations—just snap a photo and learn instantly.",
-    image:sport1,
+      "We partner with forward-thinking brands to craft bold experiences that resonate, convert and scale. From branding and UI/UX design to web development and performance optimisation, our team blends creative vision with technical expertise. By combining data-driven insights, seamless execution and continuous refinement, we help clients build meaningful connections and drive measurable impact. Let us transform your ideas into digital realities that not only look exceptional but perform brilliantly.",
+    image: sport1,
     category: "Web Developement",
     technologies: ["Solidity", "Web3.js", "React", "Ethereum", "IPFS"],
     liveUrl: "https://ekagency.jvai.site/",
@@ -143,13 +144,13 @@ export default function ProjectShowcase() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-2 mb-12">
-         
+
           {categories.map((category) => (
             <Button
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
               onClick={() => setSelectedCategory(category)}
-                className={`mb-2 cursor-pointer
+              className={`mb-2 cursor-pointer
         hover:bg-gradient-to-r from-orange-200 to-orange-300 
         ${selectedCategory === category ? "bg-gradient-to-r from-orange-200 to-orange-300  text-black font-bold" : ""}
       `}
@@ -285,9 +286,8 @@ export default function ProjectShowcase() {
 function ProjectCard({ project, onSelect, featured = false }) {
   return (
     <Card
-      className={`group hover:shadow-md transition-all duration-300 overflow-hidden ${
-        featured ? "" : ""
-      }`}
+      className={`group hover:shadow-md transition-all duration-300 overflow-hidden ${featured ? "" : ""
+        }`}
     >
       <div className="relative overflow-hidden">
         <img
